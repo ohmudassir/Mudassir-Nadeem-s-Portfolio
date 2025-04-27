@@ -60,3 +60,13 @@
   background-color: #1f1f1f;
   color: white;
 }
+
+.dark-theme .hero {
+  background-color: #1f1f1f;
+  color: white;
+}
+
+.dark-theme .hero-content h1{
+  color: white;
+}
+/* Dark mode Navbar links */
