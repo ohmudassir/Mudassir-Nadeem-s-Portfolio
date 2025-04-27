@@ -1,0 +1,124 @@
+/* Apply the Nunito font to the entire page */
+html, body {
+  font-family: 'Nunito', sans-serif; /* Set Nunito font for the whole site */
+  height: 100%;  /* Ensure full height for body */
+  margin: 0;
+  overflow: hidden;  /* Hide the scrollbar on the body */
+}
+
+#root {
+  display: flex;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  flex-direction: row; /* Align sidebar and content in row */
+  gap: 20px; /* Space between Sidebar and content */
+  height: 100vh; /* Ensure full height */
+  overflow: hidden; /* Hide the main page scrollbar */
+}
+
+/* Sidebar styles */
+.sidebar {
+  flex: 0 0 250px; /* Sidebar fixed width */
+  height: calc(100vh - 40px); /* Ensure sidebar height, accounting for top/bottom margin */
+  overflow-y: auto; /* Allow sidebar to scroll if needed */
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  position: fixed;
+  top: 20px;
+  bottom: 20px;
+  left: 10px;
+  background: white;
+  padding: 20px;
+}
+
+/* Hide scrollbar for sidebar */
+.sidebar::-webkit-scrollbar {
+  display: none;
+}
+.sidebar {
+  scrollbar-width: none;  /* Firefox scrollbar hiding */
+}
+
+/* Main content styles */
+.main-content {
+  flex: 1; /* Allow content to take remaining space */
+  padding-left: 20px;
+  padding-right: 20px;
+  height: 100vh; /* Ensure content is full height */
+  overflow-y: auto; /* Allow main content to scroll */
+}
+
+/* Hide scrollbar for main content */
+.main-content::-webkit-scrollbar {
+  display: none;
+}
+.main-content {
+  scrollbar-width: none; /* Firefox scrollbar hiding */
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  #root {
+    flex-direction: column; /* Stack sidebar and content on mobile */
+    padding: 1rem;
+  }
+
+  .sidebar {
+    width: 100%;
+    order: 2; /* Move sidebar below content on mobile */
+    position: relative;
+    left: 0;
+    top: 0;
+    bottom: 0;
+  }
+
+  .main-content {
+    width: 100%;
+    order: 1;
+  }
+}
+
+/* Adjust Navbar position for mobile */
+.right-navbar {
+  position: fixed;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  background: white;
+  padding: 10px;
+  border-radius: 30px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.right-navbar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.right-navbar li {
+  margin: 20px 0;
+}
+
+.right-navbar a {
+  text-decoration: none;
+  font-size: 24px;
+  color: #333;
+  transition: color 0.3s;
+}
+
+.right-navbar a:hover {
+  color: #f0a500;
+}
+
+/* Dark Mode Adjustments */
+.dark-theme {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+.dark-theme .right-navbar {
+  background: #1f1f1f;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}

@@ -1,0 +1,228 @@
+.sidebar {
+  width: 250px;
+  background: white;
+  padding: 20px;
+  position: fixed;
+  left: 10px;
+  top: 20px;  /* Gap from the top */
+  bottom: 20px; /* Same gap from the bottom */
+  overflow-y: auto; /* Makes sidebar scrollable */
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  height: calc(100vh - 80px); /* Adjust height to fit the screen minus top and bottom margin */
+}
+
+.profile {
+  position: relative;
+  text-align: center;
+}
+
+.online-status {
+  position: absolute;
+  top: 110px;
+  right: 50px;
+  width: 16px;  /* Size of the dot */
+  height: 16px;
+  border-radius: 50%;
+  background: linear-gradient(45deg, #1b5e20, #388e3c); /* Darker green gradient */
+  box-shadow: 0 0 10px rgba(56, 142, 60, 0.6), 0 0 15px rgba(56, 142, 60, 0.3); /* Glowing effect */
+  animation: pulse 1.5s infinite ease-in-out; /* Pulse animation */
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.3); /* Slight scale for pulse effect */
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+
+
+.profile img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+  margin: 0 auto;
+  display: block;
+  border: 3px solid #f0a500;
+  transition: box-shadow 0.3s ease;
+}
+
+.profile img:hover {
+  box-shadow: 0 0 20px #f0a500, 0 0 40px #f0a500;
+}
+
+.profile h2 {
+  margin-top: 10px;
+  font-size: 20px;
+}
+
+.profile p {
+  font-size: 14px;
+  color: gray;
+}
+
+.info {
+  margin: 20px 0;
+}
+
+.info-item {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+  font-size: 14px;
+}
+
+.available {
+  font-weight: bold;
+  letter-spacing: 1px;
+  background: linear-gradient(90deg, #00c853, #00e676); /* Green gradient */
+  -webkit-background-clip: text; /* Applies gradient to text */
+  color: transparent; /* Make text transparent so gradient shows */
+  transition: all 0.3s ease; /* Smooth transition */
+}
+
+.available:hover {
+  background: linear-gradient(90deg, #00e676, #00c853); /* Reverse gradient on hover */
+  -webkit-background-clip: text; /* Keep gradient on text */
+  color: transparent; /* Keep text transparent */
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.6); /* Glowing effect */
+  transform: scale(1.1); /* Slightly enlarge text on hover */
+}
+
+
+.section {
+  margin-bottom: 20px;
+}
+
+.section h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.skill {
+  margin-bottom: 10px;
+}
+
+.skill span {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 8px;
+  background: #e0e0e0; /* Light gray background */
+  border-radius: 20px; /* Rounded edges for a smooth look */
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle inner shadow */
+}
+
+.progress-bar div {
+  height: 100%;
+  background: linear-gradient(45deg, #f0a500, #ff7f50); /* Gradient background for a modern touch */
+  border-radius: 20px; /* Rounded edges for the progress itself */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Outer shadow for depth */
+  transition: width 0.3s ease-out; /* Smooth transition for width change */
+}
+
+.section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.section li {
+  font-size: 16px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Space between icon and text */
+  color: #333; /* Dark text for better readability */
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.section li i {
+  font-size: 20px; /* Slightly larger icons for better visibility */
+  color: #f0a500; /* Icon color */
+  transition: transform 0.3s ease, color 0.3s ease; /* Smooth transition for icon color and size */
+}
+
+.section li:hover {
+  color: #f0a500; /* Change text color on hover */
+  transform: translateX(5px); /* Slight move effect when hovering */
+}
+
+.section li:hover i {
+  transform: scale(1.2); /* Increase the icon size when hovered */
+  color: #ff7f50; /* Change icon color on hover */
+}
+
+.info-item a {
+  font-size: 16px;
+  color: white; /* White text for visibility */
+  text-decoration: none; /* Remove underline */
+  font-weight: bold;
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 30px; /* Rounded edges */
+  background: linear-gradient(45deg, #f0a500, #ff7f50); /* Gradient background */
+  transition: background 0.3s ease, transform 0.3s ease; /* Smooth transition on hover */
+}
+
+.info-item a:hover {
+  background: linear-gradient(45deg, #ff7f50, #f0a500); /* Reverse the gradient on hover */
+  transform: scale(1.05); /* Slight scale effect */
+}
+
+.info-item a:active {
+  transform: scale(1); /* Reset scale on click */
+}
+
+.download-btn {
+  width: 100%;
+  padding: 12px 20px;
+  background: linear-gradient(45deg, #f0a500, #ff7f50); /* Gradient background */
+  color: white;
+  border: none;
+  border-radius: 50px; /* Rounded edges */
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase; /* Makes text all caps */
+  cursor: pointer;
+  transition: all 0.3s ease; /* Smooth transition */
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+  text-decoration: none; /* Removes underline from link */
+}
+
+.download-btn a {
+  color: white; /* Ensures text is white */
+  text-decoration: none; /* Removes underline from link */
+  width: 100%; /* Makes the link fill the button */
+  height: 100%; /* Makes the link fill the button */
+  display: flex; /* Flexbox for centering text */
+  justify-content: center; /* Center text horizontally */
+  align-items: center; /* Center text vertically */
+}
+
+.download-btn:hover {
+  background: linear-gradient(45deg, #ff7f50, #f0a500); /* Reverse gradient on hover */
+  transform: translateY(-3px); /* Slight lift effect */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+}
+
+.download-btn:active {
+  transform: translateY(1px); /* Button presses down when clicked */
+}
